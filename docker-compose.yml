@@ -1,0 +1,17 @@
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: tinyurl-postgres
+    environment:
+      POSTGRES_DB: tinyurl
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5451:5432"
+
+  zookeeper:
+    image: zookeeper:3.9
+    container_name: tinyurl-zookeeper
+    ports:
+      - "2181:2181"
